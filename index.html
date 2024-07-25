@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark</title>
+  <link rel="icon" href="images/favicon.png">
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <!-- JavaScript Files -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<section id="Bookmarks" class="vh-100">
+  <div class="container">
+    <div class="main-title py-5">
+      <div class="parent m-auto">
+        <h1 class="fw-medium display-5 position-relative">Bookmarker</h1>
+        <span></span>
+      </div>
+    </div>
+    <div class="bookmarks-content">
+    <h2 class="text-center fs-4 fw-bolder py-4"><i class="fa-solid fa-bookmark me-1"></i>Bookmark your favorite sites<i class="fa-solid fa-bookmark ms-1"></i></h2>
+    <form>
+      <div class="mb-3">
+        <label for="bookmarkName" class="form-label"><i class="fa-solid fa-book-bookmark me-1"></i> <span>Site Name</span></label>
+        <input type="text" class="form-control bg-white" id="bookmarkName" aria-describedby="emailHelp" placeholder="Bookmark Name">
+      </div>
+      <div class="mb-3">
+        <label for="WebsiteURL" class="form-label"><i class="fa-solid fa-link me-1"></i><span>Site URL</span></label>
+        <input type="text" class="form-control bg-white" id="WebsiteURL" placeholder="Website URL">
+      </div>
+    <button type="button" id="btn-submit" onclick="addBookmark()" class="btn submit text-light fw-medium position-relative bottom-0 start-50 translate-middle-x px-5 my-3 warning">Submit</button>
+    <button type="button" id="btn-update" style="display: none;" class="btn update text-light fw-medium position-relative bottom-0 start-50 translate-middle-x px-5 my-3 warning">Update</button>
+    </form>
+    </div>
+<!-- table -->
+    <div class="display-data">
+      <table class="table my-3 text-center table-striped table-sm">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th class="w-50">Website Name</th>
+            <th>Visit</th>
+            <th>Edite</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="myTable" class="fs-5 text-capitalize ">
+
+        </tbody>
+      </table>
+    </div>
+<!-- table -->
+<!-- modal -->
+<div class="toast-container fixed-top start-50 translate-middle-x mt-2">
+  <div id="liveToast" class="toast rounded-0 shadow-sm fade" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+
+  </div>
+</div>
+<div class="modal fade" id="warning" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="dots">
+          <span><i class="fa-solid fa-circle text-danger"></i></span>
+          <span><i class="fa-solid fa-circle text-warning"></i></span>
+          <span><i class="fa-solid fa-circle text-success"></i></span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+        <h4 class="pb-3">Site Name or Url is not valid, Please follow the rules below :</h4>
+          <span><p class="ps-3 fs-6 fw-medium"><i class="fa-regular fa-circle-right pe-2 text-danger"></i>Site name must contain at least 3 characters</p></span>
+          <span><p class="ps-3 fs-6 fw-medium"><i class="fa-regular fa-circle-right pe-2 text-danger"></i>Site URL must be a valid one</p></span>
+          <button type="button" class="btn btn-secondary position-absolute bottom-0 end-0 m-3" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="dots">
+          <span><i class="fa-solid fa-circle text-danger"></i></span>
+          <span><i class="fa-solid fa-circle text-warning"></i></span>
+          <span><i class="fa-solid fa-circle text-success"></i></span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-body">
+        <p class="m-0">Are you sure you want to delete bookmark <span id="neme-index" class="fw-bold text-danger"></span> ?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="btn-del-index" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- modal -->
+  </div>
+</section>
+<script src="js/main.js"></script>
+</body>
+</html>

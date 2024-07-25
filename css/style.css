@@ -1,0 +1,97 @@
+::selection {
+  background: #fec260;
+}
+body {
+  text-transform: capitalize;
+  background-color: #fff5e8;
+}
+h1 {
+  font-family: Pacifico;
+  z-index: 1;
+}
+.main-title .parent{
+  width: fit-content;
+  position: relative;
+}
+.main-title span::after{
+  content: "";
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  background-color: #fec260;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.main-title .parent:hover span::after{
+  height: 65%;
+}
+h2 {
+  font-family: Righteous;
+  background-image: linear-gradient(180deg, #3da55b, #b3ac49);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 80%;
+}
+
+form label span {
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+.bookmarks-content,
+.main-title {
+  border-bottom: 2px #777 dotted;
+}
+
+.form-control:focus {
+  box-shadow: 0px 0px 4px 1px #fec260;
+  border-color: #ff9d00;
+}
+
+.bookmarks-content .submit{
+  background-color: #d1512d;
+  border-color: #d1512d;
+}
+.bookmarks-content .submit:hover{
+  background-color: #a03315;
+  border-color: #a03315;
+}
+
+
+table td{
+  vertical-align: middle;
+}
+
+table td .btn-visit{
+  background-color: #9eb23b;
+  border-color: #9eb23b;
+  color: white;
+}
+table td .btn-visit:hover{
+background-color: #8a9e23;
+border-color: #8a9e23;
+color: white;
+}
+table td .update ,form .update{
+  background-color: #3b72b2;
+  border-color: #3b72b2;
+  color: white;
+}
+table td .update:hover ,form .update:hover{
+background-color: #305f94;
+border-color: #305f94;
+color: white;
+}
+
+
+
+
+.modal .dots span{
+  font-size: 1.3rem;
+  padding: 0 3px;
+}
+
+.modal h4{
+  font-family: "Bree Serif", serif;
+}
